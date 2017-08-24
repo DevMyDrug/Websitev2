@@ -27,7 +27,22 @@
 
         </li>
         </ul>
-        <div id="testons" onclick="" runat="server">trytton</div>
+        <div id="testons" onclick="" runat="server">
+
+            Nous vous souhaitons la bienvenue sur le site.
+
+Inscrivez-vous vite:
+
+il suffit de cliquer sur "inscription" en haut à droite et de remplir le formulaire.
+
+Losque vous êtes inscrit vous avez accès à la partie privée du site.
+Pour envoyer des photos n'oubliez pas de créer un nouvel album.
+Donnez vos impressions sur le forum.
+
+Merci à tous !
+
+
+        </div>
     </div>
 
        
