@@ -19,10 +19,10 @@
             <li class="categ"  id="accueil" onclick="Accueil_Click" runat="server">
                 <a>Accueil</a><br />
         </li>
-        <li class="categ"">
+        <li class="categ"  id="presentation" onclick="Presentation_Click" runat="server">
             <a> Qui sommes nous?</a>
         </li>
-        <li class="categ">
+        <li class="categ"  id="Contact" onclick="Contact_Click" runat="server">
             <a>Contact</a>
 
         </li>

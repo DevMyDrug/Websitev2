@@ -29,3 +29,8 @@
         .categ a:hover {
             background-color: #111111;
         }
+td
+{
+    padding-left : 10px;
+    padding-right :10px;
+}
