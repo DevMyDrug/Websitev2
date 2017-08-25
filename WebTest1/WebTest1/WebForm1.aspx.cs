@@ -11,6 +11,8 @@ namespace WebTest1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            Categ_Click(1);
             accueil.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Accueil_Click");
             presentation.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Presentation_Click");
             Contact.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Contact_Click");
@@ -18,16 +20,16 @@ namespace WebTest1
 
         protected void Categ_Click(int idcateg)
         {
-            testons.InnerHtml = "";
+            contenu.InnerHtml = "";
             System.Web.UI.HtmlControls.HtmlGenericControl divGlob = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
             if (idcateg == 1)
             {
                 divGlob.InnerHtml = @"Nous vous souhaitons la bienvenue sur le site.
-                                    <br>
+                                    <br><br>
                                     Inscrivez - vous vite:
-                                    <br>
+                                    <br><br>
                                     il suffit de cliquer sur ""inscription"" en haut à droite et de remplir le formulaire.
-                                    <br>
+                                    <br><br>
                                     Losque vous êtes inscrit vous avez accès à la partie privée du site.<br>
                                     Pour envoyer des photos n'oubliez pas de créer un nouvel album.<br>
                                     Donnez vos impressions sur le forum.
@@ -76,6 +78,8 @@ par l'amicale aux personnes inscrites. <br>";
 
             else if (idcateg == 3)
             {
+                #region table contact
+
                 System.Web.UI.HtmlControls.HtmlGenericControl divCentrer = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 System.Web.UI.HtmlControls.HtmlGenericControl table = new System.Web.UI.HtmlControls.HtmlGenericControl("table");
                 System.Web.UI.HtmlControls.HtmlGenericControl l1 = new System.Web.UI.HtmlControls.HtmlGenericControl("tr");
@@ -110,13 +114,26 @@ par l'amicale aux personnes inscrites. <br>";
 
                 divCentrer.Controls.Add(table);
                 divGlob.Controls.Add(divCentrer);
+                #endregion
+
+                System.Web.UI.HtmlControls.HtmlGenericControl divInsc = new System.Web.UI.HtmlControls.HtmlGenericControl("div");
+                divInsc.InnerHtml = @"Pour les inscriptions (Démarche externe au site) :
+                                        <br><br>
+                                        Envoyer un mail avec :<br>
+                                        <br><br>
+                                        Nom<br>
+                                        Prénom<br>
+                                        Année de naissance<br>
+                                        Adresse<br>
+                                        N° téléphone<br>
+                                        Adresse mail<br>";
+                divInsc.Style.Add("margin-top", "100px");
+                divGlob.Controls.Add(divInsc);
             }
 
             divGlob.Style.Add("margin-top", "10px");
-                testons.Controls.Add(divGlob);
+            contenu.Controls.Add(divGlob);
         }
-
-
 
         #region IPostBackEventHandler Members
 
