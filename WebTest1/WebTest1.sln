@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest1", "WebTest1\WebTest1.csproj", "{B3D34E6A-F380-4375-959A-8FE404523E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutilsWeb", "..\..\OutilsWeb\OutilsWeb\OutilsWeb.csproj", "{23AE6CF0-4861-487F-86A5-9AFDB06D2599}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\..\Logger\Logger\Logger.csproj", "{0C01A0E6-7296-4392-BC55-9944CE3ADFCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{B3D34E6A-F380-4375-959A-8FE404523E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D34E6A-F380-4375-959A-8FE404523E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D34E6A-F380-4375-959A-8FE404523E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23AE6CF0-4861-487F-86A5-9AFDB06D2599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23AE6CF0-4861-487F-86A5-9AFDB06D2599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23AE6CF0-4861-487F-86A5-9AFDB06D2599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23AE6CF0-4861-487F-86A5-9AFDB06D2599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C01A0E6-7296-4392-BC55-9944CE3ADFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C01A0E6-7296-4392-BC55-9944CE3ADFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C01A0E6-7296-4392-BC55-9944CE3ADFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C01A0E6-7296-4392-BC55-9944CE3ADFCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AD2129B-5A99-42C1-878C-CC1AD38C53BA}
 	EndGlobalSection
 EndGlobal

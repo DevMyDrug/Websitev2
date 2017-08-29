@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="defaut.css" />
+    <script type="text/javascript" src="JavaScript.js"></script>
     <title>Classe en 3!</title>
 </head>
 <body>
@@ -15,10 +16,10 @@
             <table class="connexion">
                 <tr>
                     <td style="border-right:1px solid black">
-                        Connexion
+                        <div id="Connexion" runat="server">Connexion</div>
                     </td>
                     <td>
-                        Inscription
+                        <div id="Inscription" runat="server">Inscription</div>
                     </td>
                 </tr>
             </table>
