@@ -4,22 +4,27 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="defaut.css" />
-    <script type="text/javascript" src="JavaScript.js"></script>
+    <script type="text/javascript" id="JS" src="JavaScript.js"></script>
     <title>Classe en 3!</title>
 </head>
-<body>
-
+<body id="testit" runat="server">
     <form id="form1" runat="server">
-        <div style="float:right">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            <Scripts>
+                <asp:ScriptReference Path="PageMethod.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div style="float: right">
             <table class="connexion">
                 <tr>
-                    <td style="border-right:1px solid black">
+                    <td style="border-right: 1px solid black">
                         <div id="Connexion" runat="server">Connexion</div>
                     </td>
                     <td>
-                        <div id="Inscription" runat="server">Inscription</div>
+                        <a name="inscription" id="insc" runat="server">Inscription</a>
                     </td>
                 </tr>
             </table>
@@ -47,8 +52,7 @@
             <div class="global" id="contenu" onclick="" runat="server">
             </div>
         </div>
-
-
+        <input hidden="hidden" 
     </form>
 
 </body>

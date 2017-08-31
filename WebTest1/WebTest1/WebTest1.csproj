@@ -82,6 +82,7 @@
     <Content Include="defaut.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PageMethod.js" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

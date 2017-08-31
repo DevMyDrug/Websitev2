@@ -15,7 +15,7 @@ namespace WebTest1
             co = new MySqlConnection("server=localhost;port=3306;user id=root;password=Amandine#0604;database=website1;");
         }
 
-        public Dictionary<string,string> Query(string query)
+        public Dictionary<string, string> Query(string query)
         {
             Dictionary<string, string> dicoRep = new Dictionary<string, string>();
 
@@ -26,7 +26,7 @@ namespace WebTest1
                 MySqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    for(int i = 0; i < dataReader.FieldCount;i++)
+                    for (int i = 0; i < dataReader.FieldCount; i++)
                     {
                         dicoRep.Add(dataReader.GetName(i), dataReader[i].ToString());
                     }
@@ -36,13 +36,20 @@ namespace WebTest1
             return dicoRep;
         }
 
-        public void NonQuery(string nonquery)
+        public void NonQuery(string nonquery, Dictionary<string, object> vars = null)
         {
+            co.Open();
             MySqlCommand command = co.CreateCommand();
             command.CommandText = nonquery;
-           
+            if (vars != null && vars.Keys.Count > 0)
+            {
+                foreach (string key in vars.Keys)
+                {
+                    command.Parameters.AddWithValue(key, vars[key]);
+                }
+            }
             command.ExecuteNonQuery();
-
+            co.Close();
         }
 
     }

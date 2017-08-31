@@ -6,20 +6,23 @@ using System.Web.UI;
 using OutilsWeb;
 using Logger;
 using OutilsWeb.Balise;
+using System.Web.Services;
 
 namespace WebTest1
 {
 
     public partial class WebForm1 : System.Web.UI.Page, IPostBackEventHandler
     {
-        Database db = new Database();
+        static Database db = new Database();
         protected void Page_Load(object sender, EventArgs e)
         {
             Categ_Click(1);
             accueil.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Accueil_Click");
             presentation.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Presentation_Click");
             Contact.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Contact_Click");
-            Inscription.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Inscription_Click");
+            insc.Attributes["onclick"] = ClientScript.GetPostBackEventReference(this, "Inscription_Click");
+            testit.Attributes.Add("onload", "RecupAncre()");
+
         }
 
         protected void Categ_Click(int idcateg)
@@ -29,6 +32,7 @@ namespace WebTest1
 
             if (idcateg == 1)
             {
+                //Response.Redirect("WebTest1.aspx#Acceuil");
                 divGlob.InnerHtml(@"Nous vous souhaitons la bienvenue sur le site.
                                     <br><br>
                                     Inscrivez - vous vite:
@@ -44,6 +48,7 @@ namespace WebTest1
 
             else if (idcateg == 2)
             {
+                Response.Redirect("WebTest1.aspx#aPropos");
                 HtmlB table = new HtmlB("table");
 
                 HtmlB t1 = new HtmlB("DIV");
@@ -83,6 +88,7 @@ par l'amicale aux personnes inscrites. <br>");
 
             else if (idcateg == 3)
             {
+                Response.Redirect("WebTest1.aspx#Contact");
                 #region table contact
 
                 HtmlB divCentrer = new HtmlB("DIV");
@@ -141,6 +147,7 @@ par l'amicale aux personnes inscrites. <br>");
 
         protected void Inscription_Click()
         {
+            Response.Redirect("WebTest1.aspx#Inscription");
             contenu.InnerHtml = "";
             HtmlB field = new HtmlB("fieldset");
             HtmlB legend = new HtmlB("legend");
@@ -217,9 +224,30 @@ par l'amicale aux personnes inscrites. <br>");
                     )
                 );
             field.AddChilds(table);
-            HtmlB btnConf = new HtmlB("button").OnClick("testjs()").InnerHtml("Confirmer");
+            HtmlB btnConf = new HtmlB("button").OnClick("Inscription()").InnerHtml("Confirmer");
             contenu.Controls.Add(field.GetHtml());
             contenu.Controls.Add(btnConf.GetHtml());
+        }
+
+        [WebMethod]
+        public static void EnregistrePersonne(string mail, string pass, string nom, string prenom, string adresse,
+            string cp, string ville, string dateNaissance, string tel)
+        {
+            Dictionary<string, object> vars = new Dictionary<string, object>();
+            vars.Add("?m", mail);
+            vars.Add("?p",pass);
+            vars.Add("?n", nom);
+            vars.Add("?pr",prenom);
+            vars.Add("?a",adresse);
+            vars.Add("?cp",Convert.ToInt32(cp));
+            vars.Add("?v", ville);
+            DateTime date = DateTime.Parse(dateNaissance);
+            vars.Add("?d",date);
+            vars.Add("?t",Convert.ToInt32(tel));
+
+            db.NonQuery(@"INSERT INTO utilisateurs(mail,pass,nom,prenom,adresse,datenaissance,telephone,cp,ville)
+                        VALUES (?m,?p,?n,?pr,?a,?d,?t,?cp,?v)", vars);
+
         }
 
         #region IPostBackEventHandler Members

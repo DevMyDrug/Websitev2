@@ -1,6 +1,6 @@
-﻿function testjs()
+﻿function test()
 {
-   
+    alert("hello world ! ");  
 }
 
 

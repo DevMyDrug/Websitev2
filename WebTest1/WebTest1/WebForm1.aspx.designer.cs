@@ -13,6 +13,15 @@ namespace WebTest1 {
     public partial class WebForm1 {
         
         /// <summary>
+        /// Contrôle testit.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl testit;
+        
+        /// <summary>
         /// Contrôle form1.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace WebTest1 {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Contrôle ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// Contrôle Connexion.
@@ -31,13 +49,13 @@ namespace WebTest1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Connexion;
         
         /// <summary>
-        /// Contrôle Inscription.
+        /// Contrôle insc.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Inscription;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor insc;
         
         /// <summary>
         /// Contrôle accueil.
